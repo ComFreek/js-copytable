@@ -2,6 +2,8 @@
   * Copies a table into the clipboard.
   * This allows pasting the table into Microsoft Excel.
   *
+	* @license MIT, see LICENSE file.
+	*
   * @param tbl The DOM table object, you can get it via document.getElementById() or similar functions.
   * @return Return TRUE on success, otherwise FALSE.
   */
