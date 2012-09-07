@@ -4,21 +4,23 @@
 		<title>js-copytable Example</title>
 		<meta charset="utf-8" />
 		
+		<script src="ZeroClipboard.min.js"></script>
 		<script src="copytable.js"></script>
 		<script>
 			window.onload = function () {
-				var tbl = document.getElementById("tblData");
-				var result = document.getElementById("spResult");
-			
-				document.getElementById("btnCopy").onclick = function () {
+				copyTable.simpleInit({
+					button: document.getElementById("btnCopy"),
+					table: document.getElementById("tblData"),
+					moviePath: "ZeroClipboard.swf",
 					
-					if ( copyTableIntoClipboard(tbl) ) {
-						result.innerHTML = "Successfully copied!";
+					success: function (text) {
+						alert("Successfully copied the table! The contents were:\n\n"+text);
+					},
+					
+					accessDenied: function () {
+						alert("You have denied access in Internet Explorer!");
 					}
-					else {
-						result.innerHTML = "An error occurred :(";
-					}
-				};
+				});
 			};
 		</script>
 	</head>
@@ -58,8 +60,6 @@
 		</table>
 		
 		<hr />
-		<span id="spResult">Click the button.</span>
-		<br />
 		<button id="btnCopy">Copy it!</button>
 		
 	</body>

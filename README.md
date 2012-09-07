@@ -3,5 +3,10 @@ js-copytable
 
 Copies the contents of a table into the clipboard for pasting in Microsoft Excel.
 
-At the moment IE is only supported browser.
-Other browsers do not allow clipboard access. But a Flash solution would be applicable.
+
+Browser support
+===============
+
+js-copytable should support all browsers.
+
+But in order to copy the table to the clipboard (except in IE), js-copytable uses a flash solution (ZeroClipboard).
