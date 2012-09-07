@@ -1,17 +1,15 @@
 /**
   * @license As not otherwise noted, all content is licensed unter the MIT license. See LICENSE file for more information!
-	*/
+  */
 (function (window) {
 	"use strict";
 	/**
-  * Converts a table to a string.
-  * This allows pasting the table into Microsoft Excel.
-	*
-	
-	*
-	* @param tbl The DOM table object, you can get it via document.getElementById() or similar functions.
-	* @return Returns the generated string or FALSE if you have not passed a DOM object (i.e. tbl==null).
-	*/
+	  * Converts a table to a string.
+	  * This allows pasting the table into Microsoft Excel.
+	  *
+	  * @param tbl The DOM table object, you can get it via document.getElementById() or similar functions.
+	  * @return Returns the generated string or FALSE if you have not passed a DOM object (i.e. tbl==null).
+	  */
 	function tableToStr(tbl) {
 		if (!tbl) {
 			return false;
@@ -41,10 +39,10 @@
 	
 	/**
 	  * Uses addEventListener on modern browsers or attachEvent on some older IE versions.
-		* @author CMS from StackOverflow
-		* @license http://creativecommons.org/licenses/by-sa/3.0/
-		* @link http://stackoverflow.com/a/1695383/603003
-		*/
+	  * @author CMS from StackOverflow
+	  * @license http://creativecommons.org/licenses/by-sa/3.0/
+	  * @link http://stackoverflow.com/a/1695383/603003
+	  */
 	function bindEvent(el, eventName, eventHandler) {
 		if (el.addEventListener){
 			el.addEventListener(eventName, eventHandler, false); 
@@ -55,20 +53,20 @@
 	
 	/**
 	  * Links a button to a copy action of a table.
-		* @param params
-		*   - button : The button DOM object
-		*   - buttonContainer [OPT:] : Optional (but recommend) button container with style="position: relative"
-		*   - table : The table DOM object
-		*   - moviePath [OPT.] : The path to the ZeroClipboard movie file.
-		*                        It's only used when other browser than IE are
-		*                        used or when you set forceSWF to TRUE.
-		*   - forceSWF : Forces to use ZeroClipboard, even when under IE
-		* 
-		*   - success(copiedText) [OPT.] : The success event handler
-		*   - accessDenied [OPT:] : The access denied event handler
-		*
-		* @return Returns FALSE if required parameters have not been passed.
-		*/
+	  * @param params
+	  *   - button : The button DOM object
+	  *   - buttonContainer [OPT:] : Optional (but recommend) button container with style="position: relative"
+	  *   - table : The table DOM object
+	  *   - moviePath [OPT.] : The path to the ZeroClipboard movie file.
+	  *                        It's only used when other browser than IE are
+	  *                        used or when you set forceSWF to TRUE.
+	  *   - forceSWF : Forces to use ZeroClipboard, even when under IE
+	  * 
+	  *   - success(copiedText) [OPT.] : The success event handler
+	  *   - accessDenied [OPT:] : The access denied event handler
+	  *
+	  * @return Returns FALSE if required parameters have not been passed.
+	  */
 	function simpleInit(params) {
 		if (!params.table || !params.button) {
 			return false;
