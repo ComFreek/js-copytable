@@ -31,7 +31,7 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Welcome to js-copytable</h3>
+        <h2>Welcome to js-copytable</h2>
 
 <h3>What?</h3>
 
@@ -42,37 +42,42 @@ Just use js-copytable!</p>
 
 <h3>How?</h3>
 
-<p>Embed these two files in your HTML document:
-<code>&lt;script src="ZeroClipboard.min.js"&gt;&lt;/script&gt;
-&lt;script src="copytable.js"&gt;&lt;/script&gt;</code></p>
+<p>Embed these two files in your HTML document:</p>
 
-<p>Then, create your button (with an optional, but recommend container) and your table:
-```</p> 
-  Copy
- 
+<pre><code>&lt;script src="ZeroClipboard.min.js"&gt;&lt;/script&gt;
+&lt;script src="copytable.js"&gt;&lt;/script&gt;
+</code></pre>
 
-<p></p><table>
+<p>Then, create your button (with an optional, but recommend container) and your table:</p>
+
+<pre><code>&lt;div id="container"&gt;
+  &lt;button id="btn"&gt;Copy&lt;/button&gt;
+&lt;/div&gt;
+&lt;table id="tbl"&gt;
   &lt;!-- ... --&gt;
-</table><code>
-And finally the actual script which initiates js-copytable:
-</code>window.onload = function () {
+&lt;/table&gt;
+</code></pre>
+
+<p>And finally the actual script which initiates js-copytable:</p>
+
+<pre><code>window.onload = function () {
   copyTable.simpleInit({
     button: document.getElementById("btn"),
     table: document.getElementById("tbl"),
     moviePath: "ZeroClipboard.swf",
 
-<pre><code>success: function (text) {
-  alert("Successfully copied the table! The contents were:\n\n"+text);
-},
+    success: function (text) {
+      alert("Successfully copied the table! The contents were:\n\n"+text);
+    },
 
-accessDenied: function () {
-  alert("You have denied access in Internet Explorer!");
-}
+    accessDenied: function () {
+      alert("You have denied access in Internet Explorer!");
+    }
+  });
+};
 </code></pre>
 
-<p>});
-};```
-Be sure to upload <em>ZeroClipboard.swf</em> to your server too! It's a "fallback" for other browsers than IE.</p>
+<p>Be sure to upload <em>ZeroClipboard.swf</em> to your server too! It's a "fallback" for other browsers than IE.</p>
 
 <h3>Browser Support?!</h3>
 
@@ -81,7 +86,7 @@ Be sure to upload <em>ZeroClipboard.swf</em> to your server too! It's a "fallbac
 <li>All other browsers with Flash enabled</li>
 </ul><h3>Contact?</h3>
 
-<p>Email: <strong>comfreek</strong> | <strong>outlook</strong> | <strong>com</strong>
+<p>Email: <strong>comfreek</strong> | <strong>outlook</strong> | <strong>com</strong> <br>
 Twitter: <a href="http://twitter.com/comfreek">@ComFreek</a></p>
 
 <h1>Thanks To....</h1>
