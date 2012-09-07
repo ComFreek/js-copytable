@@ -8,4 +8,4 @@ Browser support
 ===============
 
  - Internet Explorer 6+
- - All other browsers with enabled flash
+ - All other browsers with enabled Flash
