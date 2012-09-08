@@ -4,7 +4,15 @@
 		<title>js-copytable Example</title>
 		<meta charset="utf-8" />
 		
-		<script src="ZeroClipboard.min.js"></script>
+		<!-- We do not need the Flash solution because IE
+		     allows native access to clipboard!
+		 
+		     But you can force js-copytable to use the Flash way, just
+		     set forceSWF in the simpleInit() parameters to true.
+		-->
+		<!--[if !IE]> -->
+			<script src="ZeroClipboard.min.js"></script>
+		<!-- <![endif]-->
 		<script src="copytable.js"></script>
 		<script>
 			window.onload = function () {
@@ -12,6 +20,12 @@
 					button: document.getElementById("btnCopy"),
 					table: document.getElementById("tblData"),
 					moviePath: "ZeroClipboard.swf",
+					
+					// Force js-copytable to use the Flash way
+					// If you this to true, you should also uncomment the <script>
+					// include above!
+					
+					// forceSWF: true,
 					
 					success: function (text) {
 						alert("Successfully copied the table! The contents were:\n\n"+text);
